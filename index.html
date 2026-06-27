@@ -1,1 +1,201 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aroma Gourmet</title><link rel="stylesheet" href="style.css"></head><body><header><h1>Aroma Gourmet</h1><p>Comida caseira com sabor premium.</p><a class="btn" href="https://wa.me/5500000000000">Pedir no WhatsApp</a></header><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aroma Gourmet — Comida Caseira Premium</title>
+  <meta name="description" content="Aroma Gourmet — Buffet artesanal e ambiente acolhedor. Reserve pelo WhatsApp." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <!-- Preload critical assets (substitua pelas fontes self-hosted em /fonts) -->
+  <!-- Quando for self-host, altere os href para /fonts/*.woff2 e mantenha as tags rel=preload as=\"font\" crossorigin -->
+  <link rel="preload" href="https://fonts.gstatic.com" as="font" crossorigin>
+  <link rel="preload" href="assets/hero-1200.webp" as="image">
+  <!-- Critical styles inline (hero + header) -->
+  <style>
+    :root{
+      --bg:#121212; --surface:#1B1B1B; --gold:#C28B4B; --ivory:#E9DFC9; --text:#F7F4EE; --muted:#A89E90; --whatsapp:#25D366;
+      --section-gap:140px; --content-gap:80px; --card-gap:32px; --radius:16px; --card-radius:24px;
+      --shadow-soft:0 12px 24px rgba(0,0,0,0.25); --transition-fast:180ms cubic-bezier(.2,.9,.2,1);
+    }
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 12px;background:var(--ivory);color:#081;z-index:9999;border-radius:8px}
+    header.site-header{position:fixed;inset:0 0 auto 0;z-index:60}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;padding:20px 6% 0;
+      backdrop-filter: blur(8px); background:linear-gradient(180deg, rgba(27,27,27,0.18) 0%, rgba(27,27,27,0.06) 100%);
+      gap:20px;
+    }
+    .logo{font-family:"Cormorant Garamond", serif;font-weight:700;letter-spacing:0.01em;font-size:20px;}
+    /* basic button token */
+    .btn{border-radius:999px;height:56px;padding:0 28px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--whatsapp);color:#032a12}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--ivory)}
+    /* focus state accessible */
+    :focus{outline:3px solid var(--ivory);outline-offset:4px}
+    main{margin-top:0}
+    /* Hero (minimal critical rules) */
+    .hero{position:relative;height:100vh;display:flex;align-items:center}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02);filter:contrast(.92) saturate(.95)}
+    .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+    .hero-content{position:relative;z-index:2;max-width:720px;margin-left:8%;padding:40px}
+    .hero h1{font-family:"Cormorant Garamond", serif;font-size:clamp(28px,4.5vw,64px);line-height:1.02;margin:0 0 18px;color:var(--text)}
+    .lead{color:var(--ivory);margin-bottom:28px;font-size:18px}
+    @media (max-width:767px){
+      .hero-content{margin-left:5%;max-width:90%;padding:20px}
+    }
+  </style>
+
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Defer JavaScript -->
+  <script defer src="scripts.js"></script>
+  <!-- Structured data minimal -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Aroma Gourmet Restaurante de Comida Caseira","address":{"@type":"PostalAddress","streetAddress":"Rua 3700, 160","addressLocality":"Balneário Camboriú","addressRegion":"SC","postalCode":""},"telephone":"+5547996958604"}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner" aria-hidden="false">
+    <nav class="nav" role="navigation" aria-label="Navegação principal">
+      <a class="logo" href="#" aria-label="Aroma Gourmet — Início">Aroma Gourmet</a>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn btn-ghost" href="#sobre">Sobre</a>
+        <a class="btn btn-ghost" href="#buffet">Buffet</a>
+        <a class="btn btn-primary" href="https://wa.me/5547996958604?text=Ol%C3%A1%2C+gostaria+de+fazer+uma+reserva+no+Aroma+Gourmet.">Reservar pelo WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" role="main" aria-label="Conteúdo principal">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero — Aroma Gourmet">
+      <picture>
+        <source srcset="assets/hero-1920.webp" media="(min-width:1200px)" type="image/webp">
+        <source srcset="assets/hero-1200.webp" media="(min-width:768px)" type="image/webp">
+        <img class="hero-img" src="assets/hero-768.webp" alt="Interior do Aroma Gourmet, iluminação quente e mesas arrumadas" loading="eager" width="1920" height="1080">
+      </picture>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1>O sabor da comida caseira em uma experiência premium.</h1>
+        <p class="lead">Buffet artesanal preparado diariamente com ingredientes frescos.</p>
+        <div style="display:flex;gap:16px;align-items:center">
+          <a class="btn btn-primary" href="https://wa.me/5547996958604?text=Ol%C3%A1%2C+gostaria+de+fazer+uma+reserva+no+Aroma+Gourmet." aria-label="Reservar pelo WhatsApp">Reservar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#ambiente" aria-label="Conhecer o ambiente">Conhecer o ambiente</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="container section" aria-labelledby="sobre-title">
+      <div class="grid two-col">
+        <figure>
+          <img data-src="assets/sobre-800.webp" alt="Chef preparando prato caseiro" class="lazy" width="800" height="600">
+        </figure>
+        <div>
+          <h2 id="sobre-title">Tradição e afeto em cada prato</h2>
+          <p>Ambiente acolhedor e serviço atencioso. Aqui cada refeição é preparada para lembrar o sabor da casa, com acabamento e apresentação que valorizam a experiência.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUFFET -->
+    <section id="buffet" class="section" aria-labelledby="buffet-title">
+      <h2 id="buffet-title">Nosso Buffet</h2>
+      <div class="cards grid four-col">
+        <article class="card" tabindex="0" aria-label="Pratos quentes">
+          <img data-src="assets/pratos-400.webp" alt="Prato quente: arroz, carne e legumes" class="lazy" width="400" height="300">
+          <h3>Pratos quentes</h3>
+        </article>
+        <article class="card" tabindex="0" aria-label="Saladas">
+          <img data-src="assets/saladas-400.webp" alt="Salada fresca" class="lazy" width="400" height="300">
+          <h3>Saladas</h3>
+        </article>
+        <article class="card" tabindex="0" aria-label="Sobremesas">
+          <img data-src="assets/sobremesas-400.webp" alt="Sobremesa artesanal" class="lazy" width="400" height="300">
+          <h3>Sobremesas</h3>
+        </article>
+        <article class="card" tabindex="0" aria-label="Bebidas">
+          <img data-src="assets/bebidas-400.webp" alt="Bebidas e sucos" class="lazy" width="400" height="300">
+          <h3>Bebidas</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- AMBIENTE (galeria masonry simplificada) -->
+    <section id="ambiente" class="section" aria-labelledby="ambiente-title">
+      <h2 id="ambiente-title">Ambiente</h2>
+      <div class="masonry">
+        <img data-src="assets/ambiente-1-600.webp" alt="Mesas do restaurante" class="lazy masonry-item">
+        <img data-src="assets/ambiente-2-600.webp" alt="Detalhes do buffet" class="lazy masonry-item">
+        <img data-src="assets/ambiente-3-600.webp" alt="Entrada do restaurante" class="lazy masonry-item">
+        <img data-src="assets/ambiente-4-600.webp" alt="Detalhes decorativos" class="lazy masonry-item">
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="section" aria-labelledby="dif-title">
+      <h2 id="dif-title">Diferenciais</h2>
+      <ul class="diff-list">
+        <li>Ingredientes frescos</li>
+        <li>Preparação artesanal</li>
+        <li>Ambiente climatizado</li>
+        <li>Atendimento acolhedor</li>
+      </ul>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="section" aria-labelledby="dep-title">
+      <h2 id="dep-title">O que dizem</h2>
+      <blockquote class="testimonial" aria-label="Depoimento de cliente">
+        <p>“Simplesmente inesquecível — comida com gosto de casa, em um ambiente sofisticado.”</p>
+        <cite>— Cliente</cite>
+      </blockquote>
+    </section>
+
+    <!-- HORÁRIOS & MAPA -->
+    <section id="info" class="section" aria-labelledby="info-title">
+      <h2 id="info-title">Horários & Localização</h2>
+      <div class="grid two-col">
+        <div>
+          <h3>Horários</h3>
+          <p>Segunda a Sábado: 11:30 às 14:30<br>Domingo: Fechado</p>
+        </div>
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua 3700, 160 — Centro — Balneário Camboriú — SC</p>
+          <div class="map" aria-hidden="true">
+            <!-- Substitua pelo iframe do Google Maps ou Leaflet no deploy -->
+            <img data-src="assets/map-placeholder.webp" alt="Mapa do Aroma Gourmet" class="lazy" width="600" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="final-cta" class="section" aria-labelledby="final-title">
+      <h2 id="final-title">Esperamos por você.</h2>
+      <a class="btn btn-primary large" href="https://wa.me/5547996958604?text=Ol%C3%A1%2C+gostaria+de+fazer+uma+reserva+no+Aroma+Gourmet." aria-label="Chamar no WhatsApp">Chamar no WhatsApp</a>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <a class="floating-whatsapp" href="https://wa.me/5547996958604?text=Ol%C3%A1%2C+gostaria+de+fazer+uma+reserva+no+Aroma+Gourmet." aria-label="Chamar Aroma Gourmet no WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M...Z" fill="#fff"/></svg>
+  </a>
+
+  <footer class="site-footer" role="contentinfo" style="padding:40px 6%;color:var(--muted)">
+    <small>Aroma Gourmet — Rua 3700, 160 — Balneário Camboriú — SC • Tel: +55 47 99695-8604</small>
+  </footer>
+</body>
+</html>
