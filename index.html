@@ -7,7 +7,7 @@
   <meta name="description" content="Aroma Gourmet — Buffet artesanal e ambiente acolhedor. Reserve pelo WhatsApp." />
   <link rel="icon" href="assets/favicon.svg" />
   <!-- Preload critical assets (substitua pelas fontes self-hosted em /fonts) -->
-  <!-- Quando for self-host, altere os href para /fonts/*.woff2 e mantenha as tags rel=preload as=\"font\" crossorigin -->
+  <!-- Quando for self-host, altere os href para /fonts/*.woff2 e mantenha as tags rel=preload as="font" crossorigin -->
   <link rel="preload" href="https://fonts.gstatic.com" as="font" crossorigin>
   <link rel="preload" href="assets/hero-1200.webp" as="image">
   <!-- Critical styles inline (hero + header) -->
@@ -59,7 +59,7 @@
   <script defer src="scripts.js"></script>
   <!-- Structured data minimal -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Restaurant","name":"Aroma Gourmet Restaurante de Comida Caseira","address":{"@type":"PostalAddress","streetAddress":"Rua 3700, 160","addressLocality":"Balneário Camboriú","addressRegion":"SC","postalCode":""},"telephone":"+5547996958604"}
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Aroma Gourmet Restaurante de Comida Caseira","address":{"@type":"PostalAddress","streetAddress":"Rua 3700, 160","addressLocality":"B[...]
   </script>
 </head>
 <body>
@@ -80,9 +80,10 @@
     <!-- HERO -->
     <section class="hero" aria-label="Hero — Aroma Gourmet">
       <picture>
-        <source srcset="assets/hero-1920.webp" media="(min-width:1200px)" type="image/webp">
+        <!-- Use the preview images we already uploaded so the site shows photos immediately -->
+        <source srcset="assets/hero-1200.webp" media="(min-width:1200px)" type="image/webp">
         <source srcset="assets/hero-1200.webp" media="(min-width:768px)" type="image/webp">
-        <img class="hero-img" src="assets/hero-768.webp" alt="Interior do Aroma Gourmet, iluminação quente e mesas arrumadas" loading="eager" width="1920" height="1080">
+        <img class="hero-img" src="assets/hero-1200.webp" alt="Interior do Aroma Gourmet, iluminação quente e mesas arrumadas" loading="eager" width="1920" height="1080">
       </picture>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -100,7 +101,7 @@
     <section id="sobre" class="container section" aria-labelledby="sobre-title">
       <div class="grid two-col">
         <figure>
-          <img data-src="assets/sobre-800.webp" alt="Chef preparando prato caseiro" class="lazy" width="800" height="600">
+          <img data-src="assets/logo-wall-800.webp" alt="Chef preparando prato caseiro" class="lazy" width="800" height="600">
         </figure>
         <div>
           <h2 id="sobre-title">Tradição e afeto em cada prato</h2>
@@ -114,19 +115,19 @@
       <h2 id="buffet-title">Nosso Buffet</h2>
       <div class="cards grid four-col">
         <article class="card" tabindex="0" aria-label="Pratos quentes">
-          <img data-src="assets/pratos-400.webp" alt="Prato quente: arroz, carne e legumes" class="lazy" width="400" height="300">
+          <img data-src="assets/buffet-wide-1200.webp" alt="Prato quente: arroz, carne e legumes" class="lazy" width="400" height="300">
           <h3>Pratos quentes</h3>
         </article>
         <article class="card" tabindex="0" aria-label="Saladas">
-          <img data-src="assets/saladas-400.webp" alt="Salada fresca" class="lazy" width="400" height="300">
+          <img data-src="assets/buffet-wide-1200.webp" alt="Salada fresca" class="lazy" width="400" height="300">
           <h3>Saladas</h3>
         </article>
         <article class="card" tabindex="0" aria-label="Sobremesas">
-          <img data-src="assets/sobremesas-400.webp" alt="Sobremesa artesanal" class="lazy" width="400" height="300">
+          <img data-src="assets/buffet-wide-1200.webp" alt="Sobremesa artesanal" class="lazy" width="400" height="300">
           <h3>Sobremesas</h3>
         </article>
         <article class="card" tabindex="0" aria-label="Bebidas">
-          <img data-src="assets/bebidas-400.webp" alt="Bebidas e sucos" class="lazy" width="400" height="300">
+          <img data-src="assets/buffet-wide-1200.webp" alt="Bebidas e sucos" class="lazy" width="400" height="300">
           <h3>Bebidas</h3>
         </article>
       </div>
@@ -136,10 +137,10 @@
     <section id="ambiente" class="section" aria-labelledby="ambiente-title">
       <h2 id="ambiente-title">Ambiente</h2>
       <div class="masonry">
-        <img data-src="assets/ambiente-1-600.webp" alt="Mesas do restaurante" class="lazy masonry-item">
-        <img data-src="assets/ambiente-2-600.webp" alt="Detalhes do buffet" class="lazy masonry-item">
-        <img data-src="assets/ambiente-3-600.webp" alt="Entrada do restaurante" class="lazy masonry-item">
-        <img data-src="assets/ambiente-4-600.webp" alt="Detalhes decorativos" class="lazy masonry-item">
+        <img data-src="assets/dining-1-800.webp" alt="Mesas do restaurante" class="lazy masonry-item">
+        <img data-src="assets/dining-2-800.webp" alt="Detalhes do buffet" class="lazy masonry-item">
+        <img data-src="assets/logo-wall-800.webp" alt="Entrada do restaurante" class="lazy masonry-item">
+        <img data-src="assets/buffet-wide-1200.webp" alt="Detalhes decorativos" class="lazy masonry-item">
       </div>
     </section>
 
